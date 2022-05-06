@@ -2,7 +2,6 @@ const fs = require('fs/promises');
 const inputArguments = process.argv;
 const acceptedFileTypes = ['csv'];
 
-
 let fileType = '';
 const commands = {};
 const inputIsValid = checkInput(inputArguments);
@@ -62,10 +61,7 @@ function checkInput(consoleInputArgs) {
     }
 }
 
-
-
 async function parseCSV() {
-
     const stats = await fs.stat(`${commands['file']}`);
     const fileSizeInMb = Math.round(stats.size / (1024 * 1024));
     
